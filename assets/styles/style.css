@@ -1,13 +1,8 @@
 :root {
     --pico-typography-spacing-vertical: 1rem;
-    --bacground-color: #efefef;
 }
 
-body {
 
-    background-color: var(--background-color);
-
-}
 
 p {
     max-width: 40rem;
@@ -43,14 +38,12 @@ section {
     margin-bottom: 0;
     z-index: 1;
     position: relative;
-    background: var(--background-color);
 }
 
 
 .decomation {
     padding-top: 1rem;
     padding-bottom: 1.5rem;
-    background: var(--background-color);
     margin-top: 3vw;
     margin-bottom: 5vw;
 }
@@ -64,10 +57,6 @@ section {
     overflow: hidden;
     z-index: 2;
     position: relative;
-
-    canvas{
-        background-color: var(--background-color) !important;
-    }
 }
 
 @media screen and (min-width: 600px) {
