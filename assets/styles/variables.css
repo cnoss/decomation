@@ -1,0 +1,167 @@
+:root {
+  /* Sizes
+https://utopia.fyi/type/calculator/
+---------------------------------------------------------------------------- */
+
+  --base: 1rem;
+  --step--2: clamp(
+    calc(var(--base) * 0.69),
+    calc(0.67rem + 0.13vw),
+    calc(var(--base) * 0.8)
+  );
+  --step--1: clamp(
+    calc(var(--base) * 0.83),
+    calc(0.79rem + 0.21vw),
+    calc(var(--base) * 1)
+  );
+  --step-0: clamp(
+    calc(var(--base) * 1),
+    calc(0.94rem + 0.31vw),
+    calc(var(--base) * 1.25)
+  );
+  --step-1: clamp(
+    calc(var(--base) * 1.2),
+    calc(1.11rem + 0.45vw),
+    calc(var(--base) * 1.56)
+  );
+  --step-2: clamp(
+    calc(var(--base) * 1.44),
+    calc(1.31rem + 0.64vw),
+    calc(var(--base) * 1.95)
+  );
+  --step-3: clamp(
+    calc(var(--base) * 1.73),
+    calc(1.55rem + 0.89vw),
+    calc(var(--base) * 2.44)
+  );
+  --step-4: clamp(
+    calc(var(--base) * 2.07),
+    calc(1.83rem + 1.22vw),
+    calc(var(--base) * 3.05)
+  );
+  --step-5: clamp(
+    calc(var(--base) * 2.49),
+    calc(2.16rem + 1.66vw),
+    calc(var(--base) * 3.82)
+  );
+  --xxs: var(--step--2);
+  --xs: var(--step--1);
+  --s: var(--step-0);
+  --m: var(--step-1);
+  --l: var(--step-2);
+  --xl: var(--step-3);
+  --xxl: var(--step-4);
+  --xxxl: var(--step-5);
+
+  /* Font Properties
+---------------------------------------------------------------------------- */
+  --font-family-serif: cormorant, serif;
+  --font-family-sans: barlowsans, "Atkinson", sans-serif;
+  --base-font-size: var(--s);
+  --font-icons: "Material Icons";
+  --half: calc(var(--base-font-size) / 2);
+  --quarter: calc(var(--base-font-size) / 4);
+
+  /* Font Weights
+---------------------------------------------------------------------------- */
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 600;
+
+  /* Line Heights
+---------------------------------------------------------------------------- */
+  --lh-tight: 110%;
+  --lh-semi-tight: 130%;
+  --lh-default: 140%;
+  --lh-loose: 150%;
+
+  /* Base Colors
+---------------------------------------------------------------------------- */
+  --light: hsl(0deg 0% 80% / 100%);
+  --lighter: hsl(0deg 0% 90% / 100%);
+  --lightest: hsl(0deg 0% 100% / 100%);
+  --lighten: rgb(255 255 255 / 20%);
+  --lighten-light: rgb(255 255 255 / 3%);
+  --dark: hsl(0deg 0% 40% / 100%);
+  --darker: hsl(0deg 0% 20% / 100%);
+  --darkest: hsl(0deg 0% 0% / 100%);
+  --darken: rgb(0 0 0 / 20%);
+  --darken-light: rgb(0 0 0 / 3%);
+  --km-blau: hsl(222deg 98% 68%);
+  --km-orange: #ffbb1c;
+  --km-marker: hsl(56deg 100% 88%/ 100%);
+  --km-pink: #fc8e77;
+
+  /* Functional Colors
+---------------------------------------------------------------------------- */
+  --interaction-color: var(--km-blau);
+  --decoration-color: var(--km-pink);
+  --text-color: var(--darker);
+  --headline-color: var(--darkest);
+  --headline-color-light: var(--darker);
+  --border-color: var(--dark);
+  --seperator-color: var(--dark);
+  --background-color: hsl(0deg 0% 97% / 100%);
+  --border-color-device: var(--dark);
+  --stage-background-color: var(--background-color);
+
+  /* Spaces
+---------------------------------------------------------------------------- */
+
+  --fluid-space-xs: clamp(0.5rem, 1vw, 1rem);
+  --fluid-space-s: clamp(1rem, 2vw, 2rem);
+  --fluid-space-m: clamp(1.5rem, 4vw, 4rem);
+  --fluid-space-l: clamp(2rem, 8vw, 6rem);
+  --fluid-space-xl: clamp(3rem, 12vw, 10rem);
+
+  /* Transitions
+---------------------------------------------------------------------------- */
+  --tr-fast: 0.2s;
+  --tr-medium: 0.6s;
+  --tr-slow: 1s;
+
+  /* Opacities
+---------------------------------------------------------------------------- */
+  --op-strong: 0.75;
+  --op-medium: 0.5;
+  --op-low: 0.3;
+
+  /* Content Sizes
+---------------------------------------------------------------------------- */
+  --max-width-text: 60em;
+  --max-width-logo: calc(var(--max-width-text) / 3);
+  --max-width-content: 48rem;
+  --max-width-content-xxs: 18rem;
+  --max-width-content-xs: 24rem;
+  --max-width-content-s: 30rem;
+  --max-width-content-m: var(--max-width-content);
+  --max-width-content-l: 60rem;
+  --max-width-content-xl: 84rem;
+  --min-col-width: 6rem;
+  --max-col-width-xsmall: 12rem;
+  --max-col-width-small: 18rem;
+  --max-col-width: 24rem;
+  --max-col-width-large: 30rem;
+  --large-content: 80rem;
+  --max-width-megatext: var(--max-width-content-l);
+
+  /* Misc
+---------------------------------------------------------------------------- */
+  --text-shadow: 0 0 20px var(--darken);
+  --border-width: 2px;
+  --border-width-l: 4px;
+  --border-width-s: 1px;
+  --border-radius: 4px;
+  --border-radius-s: 2px;
+  --border-radius-device: 10px;
+  --border-width-device: 2px;
+  --text-underline-offset: 0.2em;
+
+  /* Shadows
+---------------------------------------------------------------------------- */
+
+  --box-shadow-m: 0 0 0.5rem rgb(0 0 0 / 10%);
+  --box-shadow-l: 0 0 1rem rgb(0 0 0 / 10%);
+  --box-shadow-xl: 0 0 2rem rgb(0 0 0 / 10%);
+}

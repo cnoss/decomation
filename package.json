@@ -1,0 +1,16 @@
+{
+  "name": "decomation",
+  "version": "1.0.0",
+  "description": "Eine leichtgewichtige JavaScript-Bibliothek für animierte Canvas-Visualisierungen",
+  "main": "script.js",
+  "scripts": {
+    "build": "npm run clean && npm run minify",
+    "clean": "rimraf dist",
+    "minify": "mkdir -p dist && terser assets/scripts/decomation.js --compress --mangle --output dist/decomation.min.js"
+  },
+  "devDependencies": {
+    "terser": "^5.24.0",
+    "rimraf": "^5.0.5"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Demo mit GSAP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <link rel="stylesheet" href="assets/styles/variables.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <script defer src="assets/libs/gsap/dist/gsap.min.js"></script>
+    <script defer src="assets/libs/gsap/dist/ScrollTrigger.min.js"></script>
+    <script defer src="assets/libs/gsap/dist/SplitText.min.js"></script>
+
+    <script defer src="assets/scripts/eyecandy.js"></script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="main-header">
+        <h1>Animation, Motion und Aufmerksamkeit</h1>
+        </header>
+
+        <div class="hero">
+           <p>Der recht ausführliche Inhalt der nun folgt mag Wahrheiten enthalten, dient aber im Wesentlichen dazu diese kleine Bibliothek zur Animation ein bisschen zu demonstrieren. Ganz unten gibt es jedoch Implementierungshinweise, die sind absolut ernst gemeint.
+            </p> 
+        </div>
+
+        <!-- Einführungssektion -->
+        <section class="intro">
+            <h2>Die Psychologie der Bewegung in digitalen Medien</h2>
+            <p>Animation und Motion Design sind fundamentale Elemente der menschlichen Wahrnehmung und spielen eine entscheidende Rolle in der Art und Weise, wie wir digitale Inhalte verstehen und mit ihnen interagieren. Seit den Anfängen der Menschheit sind wir darauf programmiert, Bewegung zu erkennen und zu interpretieren, da sie oft lebenswichtige Informationen über unsere Umgebung liefert. Diese evolutionäre Prägung macht sich das moderne Interface-Design zunutze, um Aufmerksamkeit zu lenken, Informationen zu strukturieren und emotionale Verbindungen zu schaffen.</p>
+            
+            <p>In der digitalen Welt von heute konkurrieren unzählige visuelle Reize um unsere begrenzte Aufmerksamkeit. Studien zeigen, dass das menschliche Gehirn Bewegung etwa 500 Millisekunden schneller verarbeitet als statische Inhalte. Diese biologische Eigenschaft macht Animation zu einem mächtigen Werkzeug für Designer und Entwickler, die Nutzer durch komplexe Informationslandschaften führen müssen. Dabei geht es nicht nur um Ästhetik, sondern um fundamentale kognitive Prozesse, die bestimmen, wie wir Informationen aufnehmen, verarbeiten und behalten.</p>
+            
+            <p>Die Wissenschaft der Aufmerksamkeit hat gezeigt, dass unser visuelles System in zwei Modi operiert: dem fokussierten Aufmerksamkeitsmodus, der bewusste Konzentration erfordert, und dem peripheren Aufmerksamkeitsmodus, der automatisch und unbewusst funktioniert. Animation kann beide Systeme ansprechen und dabei helfen, die kognitive Last zu reduzieren, indem sie komplexe Übergänge und Zustandsänderungen visuell nachvollziehbar macht. Dies ist besonders wichtig in einer Zeit, in der Benutzeroberflächen immer komplexer werden und Nutzer schnell zwischen verschiedenen Kontexten wechseln müssen.</p>
+        </section>
+
+
+        <!-- Technologie-Sektion -->
+        <section class="tech-section">
+            <h2>Neurobiologische Grundlagen der Bewegungswahrnehmung</h2>
+            
+            <p>Die menschliche Wahrnehmung von Bewegung basiert auf komplexen neurobiologischen Prozessen, die tief in unserer evolutionären Entwicklung verwurzelt sind. Das visuelle System verarbeitet Bewegungsinformationen in spezialisierten Bereichen des Gehirns, insbesondere im mediotemporalen Areal MT, das auch als V5 bekannt ist. Diese Region ist darauf spezialisiert, Geschwindigkeit, Richtung und Beschleunigung von bewegten Objekten zu analysieren und spielt eine entscheidende Rolle bei der Vorhersage von Bewegungsverläufen.</p>
+            
+            <p>Interessant ist dabei, dass unser Gehirn nicht nur tatsächliche Bewegung wahrnimmt, sondern auch implizite Bewegung aus statischen Bildern ableiten kann. Dies erklärt, warum bestimmte Formen, Linien und Anordnungen ein Gefühl von Dynamik vermitteln können, selbst wenn sie völlig statisch sind. Diese Erkenntnis ist fundamental für das Verständnis von Motion Design, da sie zeigt, dass Bewegung nicht nur als zeitliche Veränderung, sondern auch als räumliche Beziehung zwischen Elementen verstanden werden kann.</p>
+            
+            <p>Die Geschwindigkeit der Bewegungsverarbeitung variiert je nach Art der Bewegung und dem Kontext, in dem sie auftritt. Lineare Bewegungen werden anders verarbeitet als kreisförmige oder unregelmäßige Bewegungen. Darüber hinaus beeinflusst die Vorhersagbarkeit einer Bewegung, wie viel kognitive Ressourcen für ihre Verarbeitung benötigt werden. Vorhersagbare, rhythmische Bewegungen erfordern weniger Aufmerksamkeit als chaotische oder unerwartete Bewegungen, was wichtige Implikationen für das Design von Benutzeroberflächen hat.</p>
+
+            <p>Forschungen in der Kognitionswissenschaft haben gezeigt, dass Bewegung auch eng mit emotionalen Reaktionen verknüpft ist. Schnelle, aggressive Bewegungen können Stress oder Unruhe auslösen, während langsame, fließende Bewegungen beruhigend wirken können. Diese emotionale Komponente der Bewegungswahrnehmung macht Animation zu einem mächtigen Werkzeug für die Gestaltung von Nutzererfahrungen, da sie nicht nur informativ, sondern auch emotional wirksam sein kann.</p>
+        </section>
+
+        <!-- Canvas Bereich -->
+        <div class="decomation" data-js-kic-type="dots" data-js-kic-min="15" data-js-kic-max="30"
+            data-js-kic-size="10" data-js-kic-brake="20"></div>
+
+        <!-- Anwendungsbeispiele -->
+        <section class="examples">
+            <h2>Aufmerksamkeitssteuerung durch gezielten Einsatz von Motion</h2>
+            
+            <p>Die gezielte Steuerung der Aufmerksamkeit durch Bewegung ist eine der mächtigsten Techniken im modernen Interface-Design. Dabei geht es nicht nur darum, die Blicke der Nutzer zu lenken, sondern auch darum, kognitive Hierarchien zu schaffen und die Informationsverarbeitung zu optimieren. Studien zur visuellen Aufmerksamkeit haben gezeigt, dass bewegte Elemente eine etwa zehnmal höhere Wahrscheinlichkeit haben, wahrgenommen zu werden als statische Elemente in derselben Position.</p>
+            
+            <p>Die Effektivität von Bewegung als Aufmerksamkeitsmagneten hängt jedoch stark von der Art der Bewegung und dem Kontext ab, in dem sie auftritt. Subtile Bewegungen können die Aufmerksamkeit sanft lenken, ohne störend zu wirken, während dramatische Bewegungen die volle Konzentration des Nutzers fordern. Diese Unterscheidung ist entscheidend für die Gestaltung von Benutzeroberflächen, da übermäßige oder unangemessene Animation schnell von ablenkend zu störend werden kann.</p>
+            
+            <p>Ein besonders wichtiger Aspekt der Aufmerksamkeitssteuerung ist das Timing. Das menschliche visuelle System ist darauf eingestellt, Bewegungsänderungen innerhalb bestimmter Zeitfenster zu erkennen und zu verarbeiten. Bewegungen, die zu schnell aufeinander folgen, können übersehen werden, während zu langsame Bewegungen ihre Wirkung als Aufmerksamkeitsmagnet verlieren können. Die optimale Geschwindigkeit für Aufmerksamkeitslenkung liegt typischerweise zwischen 200 und 500 Millisekunden für die initiale Bewegung, gefolgt von einer Stabilisierungsphase.</p>
+            
+            <p>Moderne Forschung in der Kognitionspsychologie hat auch gezeigt, dass Bewegung nicht nur die Aufmerksamkeit lenkt, sondern auch das Gedächtnis beeinflusst. Informationen, die mit Bewegung präsentiert werden, werden oft besser erinnert als statische Informationen. Dies liegt daran, dass Bewegung multiple sensorische und kognitive Systeme aktiviert und somit reichhaltigere neuronale Verbindungen schafft. Für Designer bedeutet dies, dass strategisch eingesetzte Animation nicht nur die unmittelbare Nutzererfahrung verbessert, sondern auch die langfristige Erinnerung an Inhalte und Marken stärken kann.</p>
+        </section>
+
+        <div class="grid">
+            <div class="decomation" data-js-kic-type="dots" data-js-kic-size="5" data-js-kic-min="5"
+                data-js-kic-max="6"></div>
+            <div class="decomation" data-js-kic-type="squares" data-js-kic-min="5" data-js-kic-max="6"></div>
+        </div>
+
+        <!-- Code-Beispiel Sektion -->
+        <section class="code-section">
+            <h2>Temporale Dynamik und rhythmische Strukturen</h2>
+            <p>Die zeitliche Dimension von Animation bringt eine völlig neue Ebene der Gestaltung mit sich, die über statische Designprinzipien hinausgeht. Temporale Dynamik bezieht sich auf die Art und Weise, wie sich visuelle Elemente über Zeit entwickeln und wie diese Entwicklung die Wahrnehmung und das Verständnis der Nutzer beeinflusst. Im Gegensatz zu statischen Medien, wo alle Informationen gleichzeitig verfügbar sind, ermöglicht Animation die sequenzielle Enthüllung von Informationen, was mächtige narrative und pädagogische Möglichkeiten eröffnet.</p>
+            
+            <p>Rhythmus in der Animation funktioniert ähnlich wie Rhythmus in der Musik. Er schafft Erwartungen, baut Spannungen auf und löst sie wieder auf. Ein gut gestalteter animierter Rhythmus kann Nutzer in einen Flow-Zustand versetzen, in dem die Interaktion mit der Benutzeroberfläche mühelos und intuitiv wird. Dies ist besonders wichtig bei komplexen Anwendungen, wo Nutzer längere Zeit mit der Oberfläche verbringen und sich an ihre Eigenarten gewöhnen müssen.</p>
+            
+            <p>Die Forschung zur zeitlichen Wahrnehmung hat gezeigt, dass Menschen unterschiedliche zeitliche Auflösungen für verschiedene Arten von Ereignissen haben. Sehr schnelle Ereignisse unter 100 Millisekunden werden oft als instantan wahrgenommen, während Ereignisse zwischen 100 und 1000 Millisekunden als bewusste Übergänge erlebt werden. Diese Erkenntnisse sind fundamental für die Gestaltung von Mikrointeraktionen, die das Gefühl der Responsivität und Kontrolle in digitalen Interfaces vermitteln.</p>
+        </section>
+        <div class="decomation" data-js-kic-type="polygons" data-js-kic-nodes="3" data-js-kic-min="10"
+            data-js-kic-max="20" data-js-kic-brake="20"></div>
+        <!-- Performance Tipps -->
+        <section class="performance">
+            <h2>Kognitive Belastung und Informationsarchitektur</h2>
+
+            <p>Die Beziehung zwischen Animation und kognitiver Belastung ist komplex und vielschichtig. Während gut gestaltete Animation die kognitive Last reduzieren kann, indem sie komplexe Übergänge verständlich macht und Orientierung bietet, kann übermäßige oder unangemessene Animation schnell das Gegenteil bewirken. Die Cognitive Load Theory, entwickelt von John Sweller, bietet einen wichtigen Rahmen für das Verständnis dieser Dynamik im Kontext von animierten Benutzeroberflächen.</p>
+            
+            <p>Intrinsische kognitive Belastung entsteht durch die Komplexität der zu lernenden oder zu verarbeitenden Inhalte selbst. Animation kann hier helfen, indem sie komplexe Prozesse in kleinere, verständlichere Schritte aufteilt. Extrinsische kognitive Belastung hingegen entsteht durch die Art und Weise, wie Informationen präsentiert werden. Schlecht gestaltete Animationen können diese Art der Belastung erheblich erhöhen, indem sie Aufmerksamkeit von den eigentlichen Inhalten ablenken oder unnötige visuelle Komplexität hinzufügen.</p>
+            
+            <p>Besonders relevant ist auch die germanische kognitive Belastung, die durch den Prozess der Schemabildung und des Lernens entsteht. Animation kann diesen Prozess unterstützen, indem sie dabei hilft, mentale Modelle zu entwickeln und zu verfeinern. Wenn Nutzer verstehen, wie sich Elemente einer Benutzeroberfläche verhalten und warum sie sich so verhalten, können sie effizienter mit der Anwendung interagieren und ihre Ziele schneller erreichen.</p>
+            
+            <p>Die Informationsarchitektur spielt eine entscheidende Rolle bei der Gestaltung von animierten Erfahrungen. Hierarchische Strukturen können durch unterschiedliche Animationsgeschwindigkeiten, Richtungen oder Easing-Funktionen vermittelt werden. Dadurch entstehen visuelle Grammatiken, die Nutzern helfen, die Beziehungen zwischen verschiedenen Inhalten und Funktionen zu verstehen, ohne dass explizite Erklärungen nötig sind.</p>
+        </section>
+
+        <div class="decomation" data-js-kic-type="lines" data-js-kic-min="10" data-js-kic-max="20"
+            data-js-kic-strokeweight="2"></div>
+
+        <!-- Erweiterte Features -->
+        <section class="advanced">
+            <h2>Emotionale Resonanz und Markenerlebnis</h2>
+
+            <p>Animation besitzt die einzigartige Fähigkeit, emotionale Verbindungen zwischen Nutzern und digitalen Produkten herzustellen. Diese emotionale Dimension geht weit über funktionale Aspekte hinaus und berührt fundamentale Aspekte der menschlichen Psychologie. Forschungen in der Affective Computing haben gezeigt, dass bewegte Bilder direkten Zugang zu limbischen Strukturen des Gehirns haben, die für emotionale Verarbeitung zuständig sind. Diese direkte Verbindung macht Animation zu einem mächtigen Werkzeug für die Schaffung memorabler und bedeutungsvoller Erfahrungen.</p>
+            
+            <p>Die Persönlichkeit einer Marke oder eines Produkts kann durch die Art der Animation kommuniziert werden. Energische, schnelle Bewegungen vermitteln Dynamik und Innovation, während langsame, fließende Bewegungen Eleganz und Ruhe ausdrücken können. Diese nonverbale Kommunikation durch Bewegung ist oft effektiver als explizite Botschaften, da sie auf einer unbewussten Ebene wirkt und dadurch authentischer wahrgenommen wird. Große Technologieunternehmen investieren erhebliche Ressourcen in die Entwicklung konsistenter Animationssprachen, die ihre Markenwerte verkörpern.</p>
+            
+            <p>Kulturelle Unterschiede in der Wahrnehmung von Bewegung spielen ebenfalls eine wichtige Rolle. Was in einer Kultur als angenehm und beruhigend empfunden wird, kann in einer anderen als langweilig oder unprofessionell wahrgenommen werden. Diese kulturelle Sensitivität ist besonders wichtig für global agierende Unternehmen, die ihre digitalen Produkte für verschiedene Märkte anpassen müssen. Die Geschwindigkeit, Richtung und Art der Bewegung können kulturell geprägte Bedeutungen haben, die bei der Gestaltung internationaler Benutzeroberflächen berücksichtigt werden müssen.</p>
+            
+            <p>Langfristige Nutzerstudien haben gezeigt, dass konsistente und durchdachte Animation-Strategien das Vertrauen in digitale Produkte stärken können. Nutzer entwickeln Erwartungen an das Verhalten von Benutzeroberflächen, und wenn diese Erwartungen erfüllt werden, entsteht ein Gefühl der Vorhersagbarkeit und Kontrolle. Diese psychologische Sicherheit ist fundamental für die Entwicklung von Nutzervertrauen und langfristiger Produktloyalität.</p>
+        </section>
+
+        <!-- Interaktionsanleitung -->
+        <section class="instructions">
+            <h2>Barrierefreiheit und inklusive Gestaltung</h2>
+
+            <p>Die Gestaltung animierter Benutzeroberflächen muss die Bedürfnisse aller Nutzer berücksichtigen, einschließlich jener mit verschiedenen Fähigkeiten und Einschränkungen. Bewegung kann für Menschen mit bestimmten neurologischen Erkrankungen problematisch sein. Vestibuläre Störungen können durch bestimmte Arten von Animation verstärkt werden, während Menschen mit Aufmerksamkeitsdefizit-Hyperaktivitätsstörung durch übermäßige Bewegung abgelenkt werden können. Das Verständnis dieser Herausforderungen ist entscheidend für die Entwicklung inklusiver digitaler Erfahrungen.</p>
+            
+            <p>Die Web Content Accessibility Guidelines haben spezifische Richtlinien für Animation entwickelt, die darauf abzielen, potenzielle negative Auswirkungen zu minimieren. Diese umfassen die Bereitstellung von Optionen zur Reduzierung oder Deaktivierung von Bewegung, die Vermeidung von blinkenden oder flackernden Inhalten und die Sicherstellung, dass wichtige Informationen nicht ausschließlich durch Bewegung vermittelt werden. Diese Richtlinien sind nicht nur ethisch geboten, sondern oft auch rechtlich erforderlich.</p>
+            
+            <p>Adaptive Interfaces, die sich an die Präferenzen und Bedürfnisse einzelner Nutzer anpassen können, stellen die nächste Entwicklungsstufe in der inklusiven Gestaltung dar. Durch die Analyse von Nutzerverhalten und expliziten Präferenzeinstellungen können Systeme die Menge und Art der Animation dynamisch anpassen. Dies ermöglicht es, die Vorteile von Animation für diejenigen zu erhalten, die davon profitieren, während gleichzeitig potenzielle negative Auswirkungen für empfindliche Nutzer minimiert werden.</p>
+            
+            <p>Forschungen zur Zugänglichkeit haben auch gezeigt, dass gut gestaltete Animation tatsächlich die Barrierefreiheit verbessern kann. Für Menschen mit kognitiven Beeinträchtigungen können visuelle Übergänge dabei helfen, komplexe Navigationsstrukturen zu verstehen. Für Nutzer mit Sehbehinderungen können Animationen, die mit Screenreadern kompatibel sind, zusätzliche Kontextinformationen liefern. Der Schlüssel liegt in der durchdachten Implementierung, die verschiedene Assistive Technologien berücksichtigt.</p>
+        </section>
+
+        <div class="decomation" data-js-kic-type="polygons" data-js-kic-nodes="2" data-js-kic-min="40"
+            data-js-kic-max="60" data-js-kic-brake="60"></div>
+
+        <!-- Technische Details -->
+        <section class="technical">
+            <h2>Zukunftsperspektiven und technologische Entwicklungen</h2>
+
+            <p>Die Zukunft der Animation in digitalen Medien wird maßgeblich von technologischen Fortschritten geprägt, die neue Möglichkeiten der Bewegungsgestaltung eröffnen. Machine Learning und künstliche Intelligenz beginnen bereits, die Art und Weise zu verändern, wie Animationen erstellt und optimiert werden. Adaptive Algorithmen können das Nutzerverhalten analysieren und Animationen in Echtzeit anpassen, um die Benutzererfahrung zu optimieren. Diese Entwicklungen versprechen eine Zukunft, in der sich digitale Interfaces dynamisch an die individuellen Präferenzen und Bedürfnisse ihrer Nutzer anpassen.</p>
+
+            <p>Virtual und Augmented Reality stellen völlig neue Anforderungen an die Gestaltung von Bewegung. In dreidimensionalen Umgebungen müssen Designer nicht nur die zeitliche Dimension der Animation berücksichtigen, sondern auch räumliche Beziehungen und die physikalische Präsenz der Nutzer. Die Forschung zur Bewegungskrankheit in VR-Umgebungen hat wichtige Erkenntnisse über die Grenzen und Möglichkeiten von immersiver Animation geliefert. Diese Erkenntnisse fließen bereits in die Gestaltung von zweidimensionalen Interfaces zurück und verbessern unser Verständnis der Bewegungswahrnehmung.</p>
+
+            <p>Quantencomputing und die Entwicklung neuer Rendering-Technologien versprechen Performance-Verbesserungen, die bisher undenkbare Komplexitätsgrade in Echtzeit-Animation ermöglichen werden. Gleichzeitig entwickeln sich neue Eingabemethoden wie Gestenerkennung, Blickverfolgung und Brain-Computer-Interfaces, die völlig neue Paradigmen für die Interaktion mit animierten Inhalten schaffen könnten. Diese Technologien erfordern ein grundlegendes Überdenken der Prinzipien der Bewegungsgestaltung und der Art und Weise, wie Menschen mit digitalen Systemen interagieren.</p>
+
+            <p>Nachhaltigkeit wird auch in der Animationsgestaltung zunehmend wichtiger. Der Energieverbrauch komplexer Animationen, insbesondere auf mobilen Geräten, hat direkte Auswirkungen auf die Batterielaufzeit und damit die Nutzererfahrung. Neue Ansätze in der effizienten Animation zielen darauf ab, visuell ansprechende Bewegungen zu schaffen, die minimal Ressourcen verbrauchen. Dies führt zu innovativen Techniken wie prozeduraler Animation und intelligenten Caching-Strategien, die die Grenzen zwischen Qualität und Effizienz neu definieren.</p>
+        </section>
+
+        <!-- Tool-Dokumentation -->
+        <section class="tool-documentation">
+            <h2>Decomation - Animationsbibliothek Dokumentation</h2>
+            
+            <p>Die auf dieser Seite verwendeten animierten Canvas-Elemente werden durch eine speziell entwickelte JavaScript-Bibliothek erstellt, die GSAP und Konva.js kombiniert. Diese Bibliothek ermöglicht es, mit einfachen HTML-Attributen komplexe animierte Visualisierungen zu erstellen.</p>
+
+            <h3>Verwendete Technologien</h3>
+            <p>GSAP (GreenSock Animation Platform) ist eine JavaScript-Bibliothek für hochperformante Animationen. Sie bietet eine intuitive API für komplexe Animationssequenzen und ist in der Webentwicklung weit verbreitet. GSAP unterstützt Timeline-basierte Animationen, Easing-Funktionen, Morphing und Pfad-Animationen, ScrollTrigger für scroll-basierte Animationen, 3D-Transformationen und Physik-basierte Animationen. Die Bibliothek ist besonders bekannt für ihre Zuverlässigkeit und Performance.</p>
+            
+            <p>Konva.js ist eine 2D-Canvas-Bibliothek, die eine objektorientierte API für das HTML5 Canvas bietet. Sie ermöglicht ein Layering-System für bessere Organisation, Event-Handling direkt auf Canvas-Objekten, automatische Hit-Detection, Caching und Performance-Optimierungen, Export-Funktionalitäten und ein Filtersystem für visuelle Effekte. Konva.js macht es einfach, interaktive Grafiken zu erstellen, ohne sich um die Low-Level Canvas-API kümmern zu müssen.</p>
+
+            <h3>Grundlegende Verwendung</h3>
+            <p>Um ein animiertes Canvas-Element zu erstellen, fügen Sie einfach ein div-Element mit der Klasse "decomation" und den gewünschten Datenattributen hinzu. Das type-Attribut ist erforderlich und bestimmt die Art der Visualisierung.</p>
+
+            <h3>Verfügbare Visualisierungstypen</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Typ</th>
+                        <th>Wert</th>
+                        <th>Beschreibung</th>
+                        <th>Beispiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Punkte</td>
+                        <td><code>dots</code></td>
+                        <td>Kreisförmige Elemente</td>
+                        <td><code>data-js-kic-type="dots"</code></td>
+                    </tr>
+                    <tr>
+                        <td>Quadrate</td>
+                        <td><code>squares</code></td>
+                        <td>Rechteckige Elemente</td>
+                        <td><code>data-js-kic-type="squares"</code></td>
+                    </tr>
+                    <tr>
+                        <td>Polygone</td>
+                        <td><code>polygons</code></td>
+                        <td>Vieleckige Formen (Anzahl Ecken konfigurierbar)</td>
+                        <td><code>data-js-kic-type="polygons"</code></td>
+                    </tr>
+                    <tr>
+                        <td>Linien</td>
+                        <td><code>lines</code></td>
+                        <td>Lineare Elemente</td>
+                        <td><code>data-js-kic-type="lines"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Parameter-Referenz</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Typ</th>
+                        <th>Beschreibung</th>
+                        <th>Standard</th>
+                        <th>Anwendbar auf</th>
+                        <th>Beispiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data-js-kic-type</code></td>
+                        <td>String</td>
+                        <td><strong>Erforderlich</strong> - Art der Visualisierung</td>
+                        <td>-</td>
+                        <td>Alle</td>
+                        <td><code>data-js-kic-type="dots"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-min</code></td>
+                        <td>Number</td>
+                        <td>Minimale Anzahl Elemente pro Reihe/Spalte</td>
+                        <td>6</td>
+                        <td>Alle</td>
+                        <td><code>data-js-kic-min="5"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-max</code></td>
+                        <td>Number</td>
+                        <td>Maximale Anzahl Elemente pro Reihe/Spalte</td>
+                        <td>12</td>
+                        <td>Alle</td>
+                        <td><code>data-js-kic-max="20"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-size</code></td>
+                        <td>Number</td>
+                        <td>Größe der Elemente</td>
+                        <td>auto</td>
+                        <td>dots, squares</td>
+                        <td><code>data-js-kic-size="8"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-nodes</code></td>
+                        <td>Number</td>
+                        <td>Anzahl Ecken</td>
+                        <td>6</td>
+                        <td>polygons</td>
+                        <td><code>data-js-kic-nodes="3"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-strokeweight</code></td>
+                        <td>Number</td>
+                        <td>Linienstärke</td>
+                        <td>1</td>
+                        <td>lines</td>
+                        <td><code>data-js-kic-strokeweight="3"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-brake</code></td>
+                        <td>Number</td>
+                        <td>Animationsgeschwindigkeit - höhere Werte = langsamere Animation</td>
+                        <td>10</td>
+                        <td>Alle</td>
+                        <td><code>data-js-kic-brake="20"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-width</code></td>
+                        <td>Number</td>
+                        <td>Canvas-Breite in Pixel</td>
+                        <td>auto</td>
+                        <td>Alle</td>
+                        <td><code>data-js-kic-width="400"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>data-js-kic-height</code></td>
+                        <td>Number</td>
+                        <td>Canvas-Höhe in Pixel</td>
+                        <td>auto</td>
+                        <td>Alle</td>
+                        <td><code>data-js-kic-height="300"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Performance-Optimierung</h3>
+            <p>Die Bibliothek verwendet mehrere Optimierungstechniken. Minimale Layer-Updates bedeutet, dass nur die Layer aktualisiert werden, die sich tatsächlich ändern, was die Render-Last reduziert. Object Pooling wiederverwendet Objekte anstatt sie ständig zu erstellen und zu zerstören, was Garbage Collection reduziert. Batch-Updates sammeln mehrere Änderungen und führen sie in einem Batch aus, um die Anzahl der Redraws zu minimieren. Viewport Culling animiert nur Objekte, die im sichtbaren Bereich sind.</p>
+
+            <h3>Responsive Verhalten</h3>
+            <p>Die Visualisierungen passen sich automatisch an Änderungen der Fenstergröße an. Ein integrierter Resize-Handler erkennt Größenänderungen und berechnet alle Elemente neu, um die optimale Darstellung zu gewährleisten. Die Animationen reagieren auch auf Scroll-Events und bewegen sich basierend auf der Scroll-Position für zusätzliche Dynamik.</p>
+        </section>
+
+        <!-- Technische Details -->
+        <section class="technical">
+            <h2>Technische Implementation</h2>
+
+            <p>Diese Demo nutzt folgende technische Konzepte:</p>
+
+            <p>Event-Driven Architecture: Die Anwendung basiert auf einem event-driven Ansatz. Mausklicks triggern Events, die neue Animationen starten. Dies ermöglicht eine saubere Trennung von Logik und Darstellung.</p>
+            
+            <p>Object-Oriented Design: Jeder animierte Kreis ist eine Instanz der CanvasElement-Klasse. Diese Kapselung macht den Code wartbar und erweiterbar.</p>
+            
+            <p>Memory Management: Die Demo implementiert proper cleanup für animierte Objekte, um Memory Leaks zu vermeiden. Objekte werden ordnungsgemäß zerstört, wenn sie nicht mehr benötigt werden.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="demo-footer">
+            <h2>Weitere Ressourcen</h2>
+            <p>Um mehr über diese Technologien zu lernen, besuchen Sie:</p>
+            <ul>
+                <li><a href="https://greensock.com/" target="_blank">GSAP (GreenSock)</a> - Offizielle Dokumentation und
+                    Tutorials</li>
+                <li><a href="https://konvajs.org/" target="_blank">Konva.js</a> - API-Dokumentation und Beispiele</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">MDN Canvas
+                        API</a> - Grundlagen der Canvas-Programmierung</li>
+            </ul>
+
+            <p class="copyright">© 2025 Animation Demo - Erstellt für Bildungszwecke</p>
+        </footer>
+
+
+    </div>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Konva.js CDN -->
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+    <script src="assets/scripts/decomation.js"></script>
+</body>
+
+</html>
