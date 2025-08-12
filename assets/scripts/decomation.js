@@ -200,7 +200,7 @@ class CircleElement {
     this.currentY = y;
     this.targetX = x;
     this.targetY = y;
-    this.lerpFactor = 0.03; // Smaller = smoother, larger = more responsive
+    this.lerpFactor = 0.05; // Smaller = smoother, larger = more responsive
 
     this.createCircle();
     this.addInteractivity();
